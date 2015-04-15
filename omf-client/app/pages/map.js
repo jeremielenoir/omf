@@ -57,7 +57,10 @@ define('map', ["ScrollContainer", "bloc"], function(ScrollContainer, Bloc) {
 					_bloc.idX = _bloc.initidX = j;
 					_bloc.idY = _bloc.initidY = i;
 					_bloc.lock0 = _bloc.lock1 = true;
+
 					_bloc.setValue( _ranges[j + "," + i]);
+
+
 					_bloc.x = _posx;
 					_bloc.y = _posy;
 					_scrollObject.addChild(_bloc);

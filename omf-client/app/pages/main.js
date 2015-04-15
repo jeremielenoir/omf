@@ -1,6 +1,6 @@
 var main = main || {};
 
-define('main', ["map"], function(Map) {
+define('main', ['map', 'components/services'], function(Map, Services) {
 
 	var _main = function(args) {
 
@@ -48,6 +48,13 @@ define('main', ["map"], function(Map) {
 			build();
 			// LOAD FONTS AND START APP, ELSE CALL "start" FUNCTION
 			Tools.loadFont(["Proxima"], start);
+			// WEBSERVICES CALL
+
+			var services = new Services();
+
+			console.log('SERVICES', services.getFaces(0, 0, function(faces){
+				console.log('callback', faces[0]);
+			}));
 
 		}
 
