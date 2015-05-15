@@ -52,9 +52,9 @@ define('main', ['map', 'components/services'], function(Map, Services) {
 
 			var services = new Services();
 
-			console.log('SERVICES', services.getFaces(0, 0, function(faces){
+			services.getFaces(0, 0, function(faces){
 				console.log('callback', faces[0]);
-			}));
+			});
 
 		}
 
