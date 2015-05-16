@@ -1,6 +1,6 @@
 var main = main || {};
 
-define('main', ['map', 'components/services'], function(Map, Services) {
+define('main', ['map'], function(Map) {
 
 	var _main = function(args) {
 
@@ -48,13 +48,6 @@ define('main', ['map', 'components/services'], function(Map, Services) {
 			build();
 			// LOAD FONTS AND START APP, ELSE CALL "start" FUNCTION
 			Tools.loadFont(["Proxima"], start);
-			// WEBSERVICES CALL
-
-			var services = new Services();
-
-			services.getFaces(0, 0, function(faces){
-				console.log('callback', faces[0]);
-			});
 
 		}
 
@@ -69,6 +62,7 @@ define('main', ['map', 'components/services'], function(Map, Services) {
 			main.resolution = window.devicePixelRatio || 1;
 			main.textResolution = 2;
 			main.fonts = {Proxima : "Proxima"};
+			main.martixRange = [];
 			//
 
 			// a new imported Main project Class //
