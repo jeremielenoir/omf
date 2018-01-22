@@ -1,0 +1,10 @@
+node_modules
+.idea
+
+app/src/public/js/scripts.js.map
+app/src/public/js/vendor.js.map
+app/src/config.js
+app/dist
+
+.DS_Store
+npm-debug.log
