@@ -1,9 +1,0 @@
-
-.DS_Store
-.sass-cache
-.idea
-vendor/bower_components
-node_modules
-tmp/
-public/js
-public/css

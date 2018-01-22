@@ -1,0 +1,142 @@
+	<div class="loading-container">
+		<img id="loading" class="loading" src="http://{{data.config.S3_BUCKET_NAME}}/images/loader.gif">
+	</div>
+	<div id="scrollLoader">
+		<img id="loading" class="loading" src="http://{{data.config.S3_BUCKET_NAME}}/images/loader.gif">
+	</div>
+	<canvas id="canvas" class="canvas"></canvas>
+	<script type="text/javascript">
+		var _app;
+		var _canvas = document.getElementById("canvas");
+
+		function start() {
+			require(['main'],function(main){
+				_app = new main([_canvas, {{{json data}}}]);
+			});
+
+			$(document).ready(function(){
+
+				{{#if data.error}}
+					$('.js-alert').alert();
+				{{/if}}
+
+				$('.lang-select').chosen({max_selected_options: 3});
+
+				$('.js-edit-user-submit').on('click', function(e){
+					e.preventDefault();
+					$('#edit-user').submit();
+				});
+
+        $('#edit-user').on('submit', function(e){
+          var $form = $(this);
+          e.preventDefault();
+
+          console.log('SERIALIZE', $form.serializeArray());
+
+          $.ajax({
+            type: "POST",
+            url: $form.attr('action'),
+            data: $form.serializeArray(),
+            success: function(data){
+              console.log('DATA FORM EDIT', $form.data('register'));
+							if($form.data('register') == 'true'){
+								$('.edit-human').hide();
+								$('.modal-footer').hide();
+								$('.share-register').removeClass('hide');
+							}else{
+								$('.modal').modal('hide');
+							}
+
+            }
+          });
+
+        });
+      });
+
+
+		}
+		start();
+	</script>
+
+<div class="modal-container">
+
+	{{> modalView}}
+	{{> modalShare}}
+	{{> modalLogin}}
+	{{> modalFaq}}
+	{{> modalAbuse}}
+	{{> modalRetract}}
+	{{> modalCopright}}
+    {{> modalPaypal}}
+
+	{{#if data.currentUser}}
+		{{> modalEdit}}
+	{{/if}}
+
+</div>
+<div class="alert-container">
+	{{#if data.error}}
+		<div class="js-alert alert alert-danger alert-dismissible in" role="alert">
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		  <strong>Error !</strong> {{data.error}}
+		</div>
+	{{/if}}
+</div>
+<h1 class="main-logo"><a href="/"><img src="http://{{data.config.S3_BUCKET_NAME}}/img/logo_black.png" alt="One Million Human Faces"/></a></h1>
+
+<div class="menu-container" id="btn-login">
+	{{#if data.currentUser}}
+	<div class="dropdown">
+		<a href="{{data.config.root_url}}/#number/{{data.currentUser.number}}"><img src="http://{{data.config.S3_BUCKET_NAME}}{{data.currentUser.picture}}" width="32" height="32" /></a>
+		<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+		<span class="caret"></span>
+		</button>
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+			<li><a href="/#edit/">Edit</a></li>
+			<li><a href="/login/logout">Logout</a></li>
+		</ul>
+	</div>
+			<!--a href="/#edit/" class="profile-button-edit icon-user"></a>
+			<a href="/logout" class="profile-button-logout">logout</a-->
+	{{else}}
+
+			<a href="/#login/" class="icon-user profile-button-login">login</a>
+	{{/if}}
+</div>
+
+<div class="legals-footer">
+		<ul>
+				<li><a href="/#copright/">Copyright</a></li>
+				<li><a href="/#abuse/">Abuse</a></li>
+				<li><a href="/#retract/">Retract</a></li>
+				<li><a href="/#faq/">FAQ</a></li>
+		</ul>
+</div>
+<div class="search-bar">
+		<form id="form-search" action="#" role="search">
+				<div class="search-container">
+
+						<div class="search-input-item">
+								<div class="input-group">
+										<input type="text" id="search-field" class="form-control" placeholder="Search a Human" autocomplete="off">
+										<span class="input-group-btn">
+												<button class="search-submit btn btn-custom-blue icon-search" type="button"></button>
+										</span>
+								</div>
+								<div class="search-toolbar">
+										<div id="search-field-pagination" class="search-pagination">
+												{{!-- <div class="search-pagination-label"></div> --}}
+												<div class="search-pagination-button-prev icon-arrow_left"></div>
+												<div class="search-pagination-button-next icon-arrow_right"></div>
+										</div>
+										<div class="search-reset icon-circle_close"></div>
+								</div>
+						</div>
+				</div>
+				<div class="completion-container">
+						<div class="completion-result"></div>
+				</div>
+		</form>
+</div>
+
+{{> templateModalViewFace}}
