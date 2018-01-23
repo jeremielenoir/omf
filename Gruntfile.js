@@ -127,14 +127,11 @@ module.exports = function (grunt) {
         // SASS FILES
         sass: {
             dist: {
-                options: {
-                    sourcemap: true
-                },
                 files: [
                     {
                         expand: true,
-                        cwd: '<%= config.sass_path %>',
-                        src: ['**/*.scss'],
+                        cwd: 'app/src/styles/',
+                        src: ['*.scss'],
                         dest: '<%= config.public_path %>/<%= config.css_dir %>/',
                         ext: '.css'
                     }
@@ -201,8 +198,9 @@ module.exports = function (grunt) {
                 }
             },
             sass: {
-                files: ['<%= config.sass_path %>/**/*.scss'],
-                tasks: ['sass']
+              //files: ['<%= config.sass_path %>/**/*.scss'],
+              files: ['app/src/styles/*.scss'],
+              tasks: ['sass']
             },
             handlebars: {
                 files: ['<%= config.app_path %>/**/*.hbs'],
@@ -246,7 +244,7 @@ module.exports = function (grunt) {
     // $ grunt compile // Will trigger "compile" task
     // which perform "jshint", "sass", "uglify", "requirejs" tasks
 
-    grunt.registerTask('compile', ["jshint", "bower_concat:prod", "handlebars", "uglify:prod", "requirejs", "clean"]);
+    grunt.registerTask('compile', ["jshint", "bower_concat:prod", "handlebars", "uglify:prod", "requirejs", "clean","sass"]);
     grunt.registerTask('watch_tasks', ["jshint", "bower_concat:dev", "handlebars", "uglify:dev_vendor", "uglify:dev_app"]);
     grunt.registerTask('watch_php', ["watch_tasks", "php", "watch"]);
     grunt.registerTask('watch_server', ["watch_tasks", "watch"]);

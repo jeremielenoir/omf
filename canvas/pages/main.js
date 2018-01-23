@@ -35,6 +35,7 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 		var _loader = $('.loading-container').get(0);
 		var checkboxLimiter = new CheckboxLimiter(".js-checkbox-limiter");
 		var timerLoader;
+		var num_registered = 99999;
 
 		this.config = _data.config;
 		this.currentUser = _data.currentUser;
@@ -259,7 +260,8 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 					"success/": "success",  // #search/kiwis
 			    "share/:number": "share",   // #search/kiwis/p7
 			    "number/:number(/:claim)": "number",   // #search/kiwis/p7
-					"login/": "login"   // #search/kiwis/p7
+					"login/": "login",   // #search/kiwis/p7
+					"paypal/:number":"paypal"
 			  },
 
 			  edit: function(number) {
@@ -301,7 +303,10 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 			  logout: function(number) {
 					console.log('BACKBONE EDIT', number);
 			  },
-
+        paypal: function(number) {
+          console.log('BACKBONE PAYPAL', number);
+        showPaypalPopin(number);
+              },
 			  number: function(number, claim) {
 
 					if(claim && claim == 'claim'){
@@ -364,7 +369,10 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 		function showRetractPopin(){
 			$('.modal-retract').modal('show');
 		}
-
+    function showPaypalPopin(number){
+		   $('.title_paypal').text(number);
+       $('.modal-paypal').modal('show');
+    }
 		function showSharePopin(number){
 			$('.js-share-url').val(_data.config.root_url + '/number/' + number);
 			$('.js-share-iframe').attr('src', '/share/'+ number);
@@ -375,9 +383,12 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 			$('.modal-edit').modal('show');
 		}
 
-		function showViewFace(number){
-			if( number >= 0 ){
+		function showViewFace(number){ // show Profil face or if number of register exceed 100 000 then poppin paypal API for paying
+			if( number >= 0 && num_registered <= 100000 ){
 				modalView.show(number);
+			} else {
+				$('.title_paypal').text(number);
+				$('.modal-paypal').modal('show');
 			}
 		}
 

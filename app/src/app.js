@@ -142,18 +142,18 @@ app.post('/pay', (req, res) => {
     'transactions': [ {
       'item_list': {
         'items': [ {
-          'name': 'Blue hat',
+          'name': 'User face',
           'sku': '003',
-          'price': '2.00',
+          'price': '1.00',
           'currency': 'EUR',
           'quantity': 1
         } ]
       },
       'amount': {
         'currency': 'EUR',
-        'total': '2.00'
+        'total': '1.00'
       },
-      'description': 'Hat for the best team ever'
+      'description': 'User profil one million humans'
     } ]
   };
   paypal.payment.create(create_payment_json, (error, payment) => {

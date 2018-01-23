@@ -1,0 +1,53 @@
+/// Mixin to prefix a property
+/// @author Hugo Giraudel
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+/// @param {List} $prefixes (()) - List of prefixes to print
+@mixin prefix($property, $value, $prefixes: ()) {
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+  // Output standard non-prefixed declaration
+    #{$property}: $value;
+}
+
+@mixin icon-country($ico-name,$flag) { // mixin icone country name
+   .ico-#{$ico_name} {
+       background: url('../img/lang/'+$flag+'.png');
+ }
+}
+
+@mixin keyframes {
+0% {
+  color: red;
+  transform: translate(0px, 0px); }
+22% {
+  transform: translate(5px, 0px); }
+40% {
+  transform: translate(-5px, 0px); }
+57% {
+  transform: translate(5px, 0px); }
+71% {
+  transform: translate(-5px, 0px); }
+86% {
+  transform: translate(5px, 0px); }
+100% {
+  transform: translate(0px, 0px); }
+}
+
+@mixin fontFace($fontFamily) {
+  font-family: $fontFamily;
+ src: url('../fonts/#{$fontFamily}.eot?11626639');
+ src: url('../fonts/#{$fontFamily}-webfont.eot?11626639#iefix') format('embedded-opentype'),
+ url('../fonts/#{$fontFamily}-webfont.woff?11626639') format('woff'),
+ url('../fonts/#{$fontFamily}-webfont.ttf?11626639') format('truetype'),
+ url('../fonts/#{$fontFamily}-webfont.svg?11626639#fontello') format('svg');
+ font-weight: normal;
+ font-style: normal;
+}
+
+@mixin icon-before($icon-name,$content) {
+  .icon-#{$icon-name}:before {
+    content:$content;
+  }
+}
