@@ -151,6 +151,17 @@
   content: "w"; }
 
 /* 'w' */
+.icon-circle_arrow_left:before {
+  content: "#"; }
+
+/* '#' */
+.icon-circle_arrow_right:before {
+  content: "$"; }
+
+/* '$' */
+.icon-circle_arrow_right {
+  padding-right: 27px; }
+
 @font-face {
   font-family: montserat-black;
   src: url("../fonts/montserat-black.eot?11626639");
@@ -410,7 +421,9 @@ body {
   font-family: 'montserrat-light';
   padding: 25px 40px 25px 40px;
   color: #ccc;
-  font-size: 18px; }
+  font-size: 18px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px; }
 .modal-container .modal-content {
   position: absolute;
   top: 0;
@@ -419,7 +432,7 @@ body {
   right: 0;
   max-width: 500px;
   margin: auto;
-  border-radius: 0px;
+  border-radius: 4px;
   border: 0; }
 .modal-container .modal-body {
   /*position:absolute;
@@ -429,7 +442,8 @@ body {
   right: 0;
   background: #ededed;
   /*height:260px;*/
-  height: 325px; }
+  height: 325px;
+  border-radius: 4px; }
 .modal-container .modal-footer {
   position: absolute;
   bottom: 0;
@@ -496,11 +510,11 @@ body {
 .modal-abuse .modal-footer {
   display: none; }
 
-.modal-copright .modal-content {
+.modal-copyright .modal-content {
   height: 300px; }
-.modal-copright .modal-body {
+.modal-copyright .modal-body {
   height: 230px; }
-.modal-copright .modal-footer {
+.modal-copyright .modal-footer {
   display: none; }
 
 .modal-retract .modal-content {

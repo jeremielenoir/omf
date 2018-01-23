@@ -43,7 +43,19 @@ var admins = {
 
 // mongoDb connection
 mongoose.connect(config.mongodb, { useMongoClient: true });
-
+var nb_register;
+const FacesSchema = new mongoose.Schema({});
+const FacesModel = mongoose.model('faces',FacesSchema);
+function getTotalRegister(nb_register) {
+FacesModel.count({}, function(err,c){
+  nb_register = c;
+  console.log('Total registered :'+nb_register);
+});
+return nb_register;
+}
+var vf = getTotalRegister();
+console.log('hello '+vf);
+//console.log(promise.addBack(callback));
 // express configuration
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));

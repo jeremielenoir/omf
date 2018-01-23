@@ -253,7 +253,7 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 			  routes: {
 			    "edit/": "edit",  // #search/kiwis
 			    "faq/": "faq",  // #search/kiwis
-			    "copright/": "copright",  // #search/kiwis
+			    "copyright/": "copyright",  // #search/kiwis
 			    "retract/": "retract",  // #search/kiwis
 			    "abuse/": "abuse",  // #search/kiwis
 			    "view/:number": "view",  // #search/kiwis
@@ -276,9 +276,9 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 					console.log('BACKBONE RETRACT');
 					showRetractPopin();
 			  },
-			  copright: function() {
-					console.log('BACKBONE COPRIGHT');
-					showCoprightPopin();
+			  copyright: function() {
+					console.log('BACKBONE COPYRIGHT');
+					showCopyrightPopin();
 			  },
 			  abuse: function() {
 					console.log('BACKBONE ABUSE');
@@ -360,8 +360,8 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 		function showFaqPopin(){
 			$('.modal-faq').modal('show');
 		}
-		function showCoprightPopin(){
-			$('.modal-copright').modal('show');
+		function showCopyrightPopin(){
+			$('.modal-copyright').modal('show');
 		}
 		function showAbusePopin(){
 			$('.modal-abuse').modal('show');
