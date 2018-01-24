@@ -68,6 +68,7 @@ const addStat = async(Lang) => {
   }
 };*/
 
+
 const createUserFromTwitter = function createUserFromTwitter(twitterUserData, number, done){
     if(twitterUserData.profile_image_url){
       const imgDestPath = path.resolve( __dirname, '../public/img');
@@ -167,6 +168,9 @@ const FaceHelper = {
     }catch(err) {
       console.log(err);
     }
+  },
+  getRegisteredFaceNumber : async(callback) => {
+    
   }
 };
 
