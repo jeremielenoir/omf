@@ -643,7 +643,7 @@
   .search-reset {
     display: none;
     cursor: pointer;
-    height: 100%; 
+    height: 100%;
   	&:before {
       line-height: 40px;
    	  font-size: 19px;
@@ -677,12 +677,11 @@
    .dropdown-menu {
      min-width: 60px;
      width: 90px;
-     left: -10px;
+     left: -11px;
      background: $black;
      border: $border;
      border-top: none;
-     border-bottom-left-radius: 4px;
-     border-bottom-right-radius: 4px;
+     border-radius: 0px 0px 4px 4px;
      li a {
        color: #cccccc;
        font-size: 14px;
