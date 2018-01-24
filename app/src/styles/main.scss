@@ -332,7 +332,7 @@
 
  .form-control:focus {
    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0,0,0, .2) !important;
-   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 0, 0, .2) !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(0, 0, 0, .2) !important;
      }
 
  .chosen-container-multi .chosen-choices {
@@ -643,7 +643,7 @@
   .search-reset {
     display: none;
     cursor: pointer;
-    height: 100%;
+    height: 100%; 
   	&:before {
       line-height: 40px;
    	  font-size: 19px;
@@ -681,7 +681,8 @@
      background: $black;
      border: $border;
      border-top: none;
-     border-radius: 4px;
+     border-bottom-left-radius: 4px;
+     border-bottom-right-radius: 4px;
      li a {
        color: #cccccc;
        font-size: 14px;
