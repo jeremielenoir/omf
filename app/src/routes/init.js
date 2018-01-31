@@ -25,7 +25,7 @@ router.get('/numbers/', async(req, res) => {
     res.json(err);
   }
 });
-    
+
 router.get('/claims/', async(req, res) => {
   try{
     let faces = await Face.find();
