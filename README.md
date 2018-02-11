@@ -1,3 +1,5 @@
 # One million humans
 
-A Node.js app using [Express 4](http://expressjs.com/).
+a fullstack javascript / nodejs / mongodb application
+
+http://onemillionhumans.com
