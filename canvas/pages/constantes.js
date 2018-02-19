@@ -1,4 +1,5 @@
-define('constantes', function(){
+// define('constantes', function(){
+export default function constantes() {
 
     var constantes = {};
 
@@ -68,5 +69,4 @@ define('constantes', function(){
     // autoload font
     fontLoader(constantes.icons.FONT_NAME, constantes.icons.FACEBOOK);
 
-    return constantes;
-});
+ }

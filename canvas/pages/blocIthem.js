@@ -1,5 +1,12 @@
-define('blocIthem', ['constantes', 'btnSocial', 'messageBus', 'colorMapping', 'components/spinner'], function(constantes, BtnSocial, messageBus, colorMapping, Spinner) {
+// define('blocIthem', ['constantes', 'btnSocial', 'messageBus', 'colorMapping', 'components/spinner'], function(constantes, BtnSocial, messageBus, colorMapping, Spinner) {
+import constantes from './constantes';
+import btnSocial from '../components/btnSocial';
+import messageBus from '../components/messageBus';
+import colorMapping from '../components/colorMapping';
+import spinner from '../components/spinner';
 
+export default function blocItem() {
+	
     var _lastSelected;
 
 	var _blocIthem = function(ITEM_WIDTH, ITEM_HEIGHT) {
@@ -474,5 +481,6 @@ define('blocIthem', ['constantes', 'btnSocial', 'messageBus', 'colorMapping', 'c
 		this.resize(w, h);
 	};
 
-	return _blocIthem;
-});
+ 	return _blocIthem;
+// });
+}

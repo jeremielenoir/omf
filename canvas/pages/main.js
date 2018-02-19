@@ -1,6 +1,13 @@
 var main = main || {};
 
-define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter', 'pages/modalView'], function(Map, messageBus, SearchBar, CheckboxLimiter, modalView) {
+// define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter', 'pages/modalView'], function(Map, messageBus, SearchBar, CheckboxLimiter, modalView) {
+import map from './map';
+import messageBus from '../components/messageBus';
+import searchBar from '../components/searchBar';
+import checkboxLimiter from '../components/checkbox-limiter';
+import modalView from './modalView';
+
+export default function main() {
 
 	var _main = function(args) {
 
@@ -401,6 +408,7 @@ define('main', ['map', 'messageBus', 'searchBar', 'components/checkbox-limiter',
 		init();
 	};
 
-	return _main;
+ 	return _main;
 
-});
+// });
+}

@@ -2,7 +2,11 @@ var ScrollContainerType = ScrollContainerType || {};
 ScrollContainerType.SCROLL = "scroll";
 ScrollContainerType.SLIDER = "slider";
 
-define('ScrollContainer', ['Gesture', 'messageBus'], function(Gesture, messageBus) {
+// define('ScrollContainer', ['Gesture', 'messageBus'], function(Gesture, messageBus) {
+import Gesture from './gesture';
+import messageBus from './messageBus';
+
+export default function ScrollContainer() {
 
 	var ScrollContainer = function(type, stage, rect, viewPort, constraintAxe) {
 
@@ -372,5 +376,6 @@ define('ScrollContainer', ['Gesture', 'messageBus'], function(Gesture, messageBu
 		this._dispose();
 	};
 
-	return ScrollContainer;
-});
+ 	return ScrollContainer;
+// });
+}

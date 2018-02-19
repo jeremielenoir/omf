@@ -1,4 +1,7 @@
-define('bloc', ["blocIthem"], function(BlocIthem) {
+// define('bloc', ["blocIthem"], function(BlocIthem) {
+import blocIthem from './blocIthem';
+
+export default function bloc() {
 
 	var _bloc = function(ITEM_WIDTH, ITEM_HEIGHT, c, l) {
 
@@ -87,5 +90,6 @@ define('bloc', ["blocIthem"], function(BlocIthem) {
 		this.resize(w, h);
 	};
 
-	return _bloc;
-});
+ 	return _bloc;
+// });
+}

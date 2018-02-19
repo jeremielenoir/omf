@@ -1,5 +1,6 @@
-define('components/spinner', function(){
-
+// define('components/spinner', function(){
+export default function spinner() {
+    
     var Spinner = function(){
         PIXI.DisplayObjectContainer.call(this);
 
@@ -52,5 +53,6 @@ define('components/spinner', function(){
         }
     };
 
-    return Spinner;
-});
+     return Spinner;
+// });
+}

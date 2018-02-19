@@ -1,5 +1,5 @@
-define('messageBus', function(){
-
+// define('messageBus', function(){
+export default function messageBus() {
     /**
      * Simple empty message bus to be reusable in whole project
      * @type {{}}
@@ -8,5 +8,6 @@ define('messageBus', function(){
 
     PIXI.EventTarget.call(messageBus);
 
-    return messageBus;
-});
+//     return messageBus;
+// });
+}

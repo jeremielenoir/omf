@@ -1,5 +1,7 @@
-define('components/animator', function(){
+//define('components/animator', function(){
 
+export default function animator() {
+	
 	var _event = "animationend.animator";
 
 	return { 
@@ -35,4 +37,5 @@ define('components/animator', function(){
 			element.off(_event).removeClass(this.prefix+anim);
 		}
 	};
-});
+// });
+}

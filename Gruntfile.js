@@ -136,6 +136,17 @@ module.exports = function (grunt) {
                         ext: '.css'
                     }
                 ]
+            }   sass: {
+            dist: {
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'app/src/styles/',
+                        src: ['*.scss'],
+                        dest: '<%= config.public_path %>/<%= config.css_dir %>/',
+                        ext: '.css'
+                    }
+                ]
             }
         },
 

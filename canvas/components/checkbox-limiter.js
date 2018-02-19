@@ -1,5 +1,7 @@
-define('components/checkbox-limiter', ['components/animator'], function(animator){
+//define('components/checkbox-limiter', ['components/animator'], function(animator){
+import animator from './animator';
 
+export default function checkboxLimiter() {
 	// import jQuery
 	var $ = jQuery;
 
@@ -65,4 +67,5 @@ define('components/checkbox-limiter', ['components/animator'], function(animator
 	};
 
 	return CheckboxLimiter;
-});
+// });
+}

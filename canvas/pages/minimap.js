@@ -1,4 +1,11 @@
-define('minimap', ['constantes', 'messageBus', 'btnSocial', 'mapCursor', 'colorMapping'], function(constantes, messageBus, Button, MapCursor, colorMapping){
+// define('minimap', ['constantes', 'messageBus', 'btnSocial', 'mapCursor', 'colorMapping'], function(constantes, messageBus, Button, MapCursor, colorMapping){
+import constantes from './constantes';
+import messageBus from '../components/messageBus';
+import btnSocial from '../components/btnSocial';
+import mapCursor from '../components/mapCursor';
+import colorMapping from '../components/colorMapping';
+
+export default function Minimap() {
 
     var _width, _height, _gridWidth, _gridHeight, _ITEM_WIDTH, _ITEM_HEIGHT, _event, _lastNumber;
 
@@ -284,5 +291,6 @@ define('minimap', ['constantes', 'messageBus', 'btnSocial', 'mapCursor', 'colorM
      */
     Minimap.prototype.resize = function(){};
 
-    return Minimap;
-});
+     return Minimap;
+// });
+}

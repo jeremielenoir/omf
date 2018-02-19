@@ -1,4 +1,7 @@
-define('mock/faces', ['messageBus'], function(messageBus){
+// define('mock/faces', ['messageBus'], function(messageBus){
+import messageBus from '../components/messageBus';
+
+export default function faces() {
 
     var MockFaces = function(){
         // http://placekitten.com/200/300
@@ -66,5 +69,6 @@ define('mock/faces', ['messageBus'], function(messageBus){
         return values.toString();
     };
 
-    return new MockFaces();
-});
+     return new MockFaces();
+// });
+}

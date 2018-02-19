@@ -1,5 +1,6 @@
-define('cacheControl', function(){
+//define('cacheControl', function(){
 
+export default function cacheControl() {
     //@TODO: à tester
 
     /**
@@ -48,4 +49,5 @@ define('cacheControl', function(){
 
     return CacheControl;
 
-});
+// });
+}

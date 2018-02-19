@@ -1,5 +1,5 @@
-define('btnSocial', function(){
-
+//define('btnSocial', function(){
+export default function btnSocial() {
     /**
      * Add interactive social button with glyph
      * @param glyph
@@ -94,4 +94,5 @@ define('btnSocial', function(){
 
     return BtnSocial;
 
-});
+// });
+}

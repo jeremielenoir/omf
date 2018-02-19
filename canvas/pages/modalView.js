@@ -1,15 +1,20 @@
-define('pages/modalView',
-[
-	'components/services',
-	'constantes',
-	'messageBus'
-],
-function(
-	Services,
-	constantes,
-	messageBus
-){
+import services from '../components/services';
+import messageBus from '../components/messageBus';
+import constantes from './constantes';
 
+// define('pages/modalView',
+// [
+// 	'components/services',
+// 	'constantes',
+// 	'messageBus'
+// ],
+// function(
+// 	Services,
+// 	constantes,
+// 	messageBus
+// )
+// {
+	export default function modalView() {
 
 	var _services = new Services();
 	var _lastColorUsed;
@@ -108,5 +113,5 @@ function(
 		}, 100);
 	};
 
-	return new modalView();
-});
+	 return new modalView();
+}

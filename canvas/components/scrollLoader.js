@@ -1,4 +1,7 @@
-define('components/scrollLoader', ["messageBus"], function(messageBus){
+// define('components/scrollLoader', ["messageBus"], function(messageBus){
+import messageBus from './messageBus';
+
+export default function scrollLoader() {
 
 	var img = "base64Image";
 
@@ -49,5 +52,6 @@ define('components/scrollLoader', ["messageBus"], function(messageBus){
         this.background.endFill();
     };
 
-    return ScrollLoader;
-});
+     return ScrollLoader;
+// });
+}

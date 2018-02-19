@@ -1,4 +1,8 @@
-define('components/services', ['cacheControl', 'messageBus'], function(CacheControl, messageBus) {
+// define('components/services', ['cacheControl', 'messageBus'], function(CacheControl, messageBus) {
+import cacheControl from './cacheControl';
+import messageBus from './messageBus';
+
+export default function services() {
 
 	var cache = new CacheControl();
 
@@ -105,6 +109,7 @@ define('components/services', ['cacheControl', 'messageBus'], function(CacheCont
         //}
 	};
 
-	return Services;
+ 	return Services;
 
-});
+// });
+}

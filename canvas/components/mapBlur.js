@@ -1,5 +1,7 @@
-define('mapBlur', ['messageBus'], function(messageBus){
+// define('mapBlur', ['messageBus'], function(messageBus){
+import messageBus from './messageBus';
 
+export default function mapBlur() {
     /**
      *
      * @param objectToBlur
@@ -143,6 +145,7 @@ define('mapBlur', ['messageBus'], function(messageBus){
 
     };
 
-    return MapBlur;
+     return MapBlur;
 
-});
+// });
+}

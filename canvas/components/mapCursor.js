@@ -1,4 +1,9 @@
-define('mapCursor', ['btnSocial', 'constantes', 'messageBus'], function(Button, constantes, messageBus){
+//define('mapCursor', ['btnSocial', 'constantes', 'messageBus'], function(Button, constantes, messageBus){
+import btnSocial from './btnSocial';
+import constantes from '../pages/constantes';
+import messageBus from './messageBus';
+
+export default function mapCursor() {
 
     var _blurFilter;
 
@@ -74,5 +79,6 @@ define('mapCursor', ['btnSocial', 'constantes', 'messageBus'], function(Button, 
         this.numberText.pivot.x = this.numberText.width/(2*this.numberText.scale.x);
     };
 
-    return MapCursor;
-});
+     return MapCursor;
+// });
+}

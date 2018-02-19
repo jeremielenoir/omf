@@ -1,5 +1,7 @@
-define('pagination', ['messageBus'], function(messageBus){
+// define('pagination', ['messageBus'], function(messageBus){
+import messageBus from './messageBus';
 
+export default function pagination() {
     /**
      *
      * @param data
@@ -150,6 +152,7 @@ define('pagination', ['messageBus'], function(messageBus){
     };
 
 
-    return Pagination;
+     return Pagination;
 
-});
+// });
+}

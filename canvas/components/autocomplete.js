@@ -1,4 +1,7 @@
-define('autocomplete', ["components/services"], function(Services){
+//define('autocomplete', ["components/services"], function(Services){
+import services from './services';
+
+export default function autocomplete() {
 
     var _services = new Services();
 
@@ -49,4 +52,5 @@ define('autocomplete', ["components/services"], function(Services){
     };
 
     return Autocomplete;
-});
+// });
+}

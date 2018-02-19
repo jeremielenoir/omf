@@ -1,4 +1,6 @@
-define('Gesture', [], function() {
+//define('Gesture', [], function() {
+
+export default function Gesture() {
 
 	var Gesture = function(constraintAxe) {
 		var _scope = this;
@@ -143,5 +145,6 @@ define('Gesture', [], function() {
 		return this._pos;
 	};
 
-	return Gesture;
-});
+ 	return Gesture;
+// });
+}

@@ -1,4 +1,15 @@
-define('map', ["ScrollContainer", "bloc", "components/services", 'messageBus', 'minimap', 'mapBlur', 'colorMapping', 'mock/faces', 'components/scrollLoader'], function(ScrollContainer, Bloc, Services, messageBus, Minimap, MapBlur, colorMapping, mockFaces, ScrollLoader) {
+// define('map', ["ScrollContainer", "bloc", "components/services", 'messageBus', 'minimap', 'mapBlur', 'colorMapping', 'mock/faces', 'components/scrollLoader'], function(ScrollContainer, Bloc, Services, messageBus, Minimap, MapBlur, colorMapping, mockFaces, ScrollLoader) {
+import ScrollContainer from '../components/ScrollContainer';
+import bloc from './bloc';
+import services from '../components/services';
+import messageBus from '../components/messageBus';
+import minimap from './minimap';
+import mapBlur from '../components/mapBlur';
+import colorMapping from '../components/colorMapping';
+import faces from '../mock/face-data';
+import ScrollLoader from '../components/scrollLoader';
+
+export default function map() {
 
 	var _map = function() {
 
@@ -598,5 +609,6 @@ define('map', ["ScrollContainer", "bloc", "components/services", 'messageBus', '
 		_scrollLoader.resize(w, h);
 	};
 
-	return _map;
-});
+ 	return _map;
+// });
+}

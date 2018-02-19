@@ -1,4 +1,10 @@
-define('searchBar', ['messageBus', "components/services", 'pagination', 'autocomplete'], function(messageBus, Services, Pagination, Autocomplete){
+// define('searchBar', ['messageBus', "components/services", 'pagination', 'autocomplete'], function(messageBus, Services, Pagination, Autocomplete){
+import messageBus from './messageBus';
+import services from './services';
+import pagination from './pagination';
+import autocomplete from './autocomplete';
+
+export default function searchBar() {
 
     var _services = new Services();
     var _lastValue = "";
@@ -117,6 +123,7 @@ define('searchBar', ['messageBus', "components/services", 'pagination', 'autocom
         this._submitCallback = callback;
     };
 
-    return SearchBar;
+     return SearchBar;
 
-});
+// });
+}
