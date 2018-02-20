@@ -41,7 +41,7 @@ export default function autocomplete() {
                     var list = [];
 
                     _.each(data, function(face){
-                        var str = new String(face.accountname);
+                        var str = String(face.accountname);
                         str.face = face;
                        list.push(str);
                     });

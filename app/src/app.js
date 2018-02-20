@@ -34,6 +34,7 @@ paypal.configure({
 
 const imgDestPath = path.resolve('./public/img');
 const publicPath = path.resolve('./public');
+const distPath = path.resolve('./dist');
 const app = express();
 
 var admins = {
@@ -64,6 +65,7 @@ app.use(session({ secret: 'keyboard cat' }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(`${__dirname }/public`)); // set public folder to static >> but now host in amazon s3
+app.use(express.static(distPath)); // path to dist bundle.js file webpack
 app.use(flash());
 app.use(nodalytics('UA-67692075-1'));
 app.use((req, res, next) => {

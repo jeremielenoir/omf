@@ -47,8 +47,9 @@ export default function searchBar() {
             messageBus.emit("blocItem:setUnselected");
 
             var value = _this.$field.val();
-
-            if( _lastValue === value && !(value*1 >= 0) ){
+            let hasVal = value*1 >= 0;
+            
+            if( _lastValue === value && !hasVal ){
                 _this.pagination.next() ;
                 return;
             }
