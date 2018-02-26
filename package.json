@@ -33,7 +33,9 @@
     "jshint-stylish": "^2.2.1",
     "ncp": "^2.0.0",
     "nodemon": "^1.12.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "webpack-cli": "^2.0.9",
+    "webpack-dev-server": "^3.0.0"
   },
   "dependencies": {
     "aws-sdk": "^2.1.36",
