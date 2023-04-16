@@ -37,7 +37,7 @@
     "rimraf": "^2.6.2"
   },
   "dependencies": {
-    "aws-sdk": "^2.1.36",
+    "aws-sdk": "^2.1359.0",
     "basic-auth": "^2.0.0",
     "body-parser": "~1.18.2",
     "bower": "^1.4.1",
